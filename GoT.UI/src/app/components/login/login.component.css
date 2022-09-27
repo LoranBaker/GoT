@@ -1,0 +1,28 @@
+.card{
+    border: none;
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(36, 31, 31);
+}
+
+.card h1 
+    {
+    color: #ffffff;
+    font-style: normal;
+    font-size: 40px;
+}
+.card h6{
+    color: #ffffff;
+    font-style: normal;
+    font-size: 15px;
+}
+
+label{
+    color: #fff;
+    font-style: normal;
+    font-size: 15px;
+}

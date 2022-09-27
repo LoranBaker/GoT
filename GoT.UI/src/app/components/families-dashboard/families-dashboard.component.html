@@ -1,0 +1,27 @@
+<div class="center" style="overflow-x:auto;">
+  <div class="addButton">
+    <h1>Game of thrones families</h1>
+    <button class="btn btn-primary btn-lg active" role="button" aria-pressed="true" (click)="createNewFamily()">Create new family</button>
+  </div>
+  <table class="table table-dark" >
+      <thead>
+          <tr class="table-active">
+              <th scope="col">ID</th>
+              <th scope="col">Naziv</th>
+              <th scope="col">Predstavnik</th>
+              <th scope="col">Grb</th>
+              <th scope="col">Edit</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let family of families">
+              <td>{{family.id}}</td>
+              <td>{{family.naziv}}</td>
+              <td>{{family.predstavnik}}</td>
+              <td>{{family.grb}}</td>
+              <td><button (click)="openDialogEdit(family)" type="button" class="btn btn-primary btn-lg active">Edit</button></td>
+          </tr>
+      </tbody>
+  </table>
+  </div> 
+  <app-edit-families [families]="familiesToEdit" (familiesUpdated)="updateFamiliesList($event)"></app-edit-families>

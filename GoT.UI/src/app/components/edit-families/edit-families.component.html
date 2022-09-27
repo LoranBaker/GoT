@@ -1,0 +1,21 @@
+<H2>welcome</H2>
+<div *ngIf="families">
+    <div>
+        Naziv:
+        <input [(ngModel)]="families.naziv" placeholder="Naziv"/>
+    </div>
+    <div>
+        Predstavnik:
+        <input [(ngModel)]="families.predstavnik" placeholder="Predstavnik"/>
+    </div>
+    <div>
+        Grb:
+        <input [(ngModel)]="families.grb" placeholder="Grb"/>
+    </div>
+    <button (click)="updateFamilies(families)" *ngIf="families.id">Update</button>
+    <button (click)="deleteFamilies(families)" *ngIf="families.id">Delete</button>
+    <button (click)="createFamilies(families)" *ngIf="!families.id">Create</button>
+    </div>
+
+
+  

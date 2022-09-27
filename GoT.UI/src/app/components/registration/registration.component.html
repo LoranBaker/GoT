@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Sign Up</h1>
+                    <h6>Register here!</h6>
+                </div>
+                <form>
+                    <form>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Username</label>
+                          <input type="email" class="form-control" [(ngModel)]="userRegistration.username" [ngModelOptions]="{standalone: true}" placeholder="Enter username">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="email" class="form-control"[(ngModel)]="userRegistration.name" [ngModelOptions]="{standalone: true}" placeholder="Enter name">
+                          </div>
+                          <br>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Password</label>
+                          <input type="password" class="form-control" [(ngModel)]="userRegistration.password" [ngModelOptions]="{standalone: true}" placeholder="Password">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Confirm Password</label>
+                            <input type="password" class="form-control" [(ngModel)]="userRegistration.confirmPassword" [ngModelOptions]="{standalone: true}"placeholder="Password">
+                          </div>
+                          <br>
+                        <button type="submit"class="btn btn-primary" (click)="register(userRegistration)">Sign Up</button>
+                      </form>
+                </form>
+                <a style="color: #fff; margin-top: 10px;"  routerLink="/login">Already logged in? Click to Login!</a>
+            </div>
+            
+        </div>
+    </div>
+  </div>
