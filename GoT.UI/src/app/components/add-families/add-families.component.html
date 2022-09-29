@@ -1,0 +1,29 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Add new family</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form>
+        <div *ngIf="families">
+            <div class="form-group">
+                Naziv:
+                <input class="form-control" [(ngModel)]="families.naziv" [ngModelOptions]="{standalone: true}" placeholder="Naziv"/>
+            </div>
+            <div class="form-group">
+                Predstavnik:
+                <input class="form-control" [(ngModel)]="families.predstavnik" [ngModelOptions]="{standalone: true}" placeholder="Predstavnik"/>
+            </div>
+            <div class="form-group">
+                Grb:
+                <input class="form-control" [(ngModel)]="families.grb" [ngModelOptions]="{standalone: true}" placeholder="Grb"/>
+            </div>
+            <br/>
+            <div class="modal-footer">
+                <button class="btn btn-primary" (click)="createFamilies(families)" *ngIf="!families.id">Create</button>
+                <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+              </div>
+
+            </div>
+    </form>
+  </div>
+

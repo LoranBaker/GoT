@@ -4,6 +4,8 @@ import { Families } from '../models/families';
 import { Observable } from 'rxjs/internal/Observable';
 import { environment } from 'src/environments/environment';
 
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+
 @Injectable({
   providedIn: 'root'
 })

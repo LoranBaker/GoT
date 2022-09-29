@@ -6,15 +6,17 @@ import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './shared/auth.guard';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RegistrationComponent } from './components/registration/registration.component';
-import { LogoutComponent } from './components/logout/logout.component';
+import { AddFamiliesComponent } from './components/add-families/add-families.component';
+import { DeleteFamiliesComponent } from './components/delete-families/delete-families.component';
 
 const routes: Routes = [
-  {path: "" ,component: DashboardComponent},
-  {path: 'families-dashboard', component: FamiliesDashboardComponent},
-  {path: 'edit-families', component: EditFamiliesComponent},
+  {path: "" ,component: DashboardComponent,canActivate:[AuthGuard]},
+  {path: 'families-dashboard', component: FamiliesDashboardComponent, canActivate:[AuthGuard]},
+  {path: 'edit-families', component: EditFamiliesComponent, canActivate:[AuthGuard]},
   {path: "login",component: LoginComponent},
   {path: "registration",component: RegistrationComponent},
-  {path: "logout",component: LogoutComponent},
+  {path: "add-families",component: AddFamiliesComponent},
+  {path: "delete-families",component: DeleteFamiliesComponent},
 ];
 
 @NgModule({

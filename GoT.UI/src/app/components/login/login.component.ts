@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { UserLogin } from 'src/app/models/userLogin';
 import { UserRegistration } from 'src/app/models/userRegistration';
 import { AuthService } from 'src/app/services/auth.service';
+import { NavbarService } from 'src/app/services/navbar.service';
 
 @Component({
   selector: 'app-login',
@@ -18,11 +19,13 @@ export class LoginComponent {
 
   responsedata:any;
 
-  constructor(private authService: AuthService, private route:Router){
+  constructor(private authService: AuthService, private route:Router,public nav: NavbarService ){
     localStorage.clear();
   }
 
-  ngOnInit(): void {};
+  ngOnInit(): void {
+    this.nav.hide();
+  };
 
   register(userRegistration: UserRegistration){
     this.authService.register(userRegistration).subscribe();

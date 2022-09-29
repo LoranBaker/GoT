@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserRegistration } from 'src/app/models/userRegistration';
 import { AuthService } from 'src/app/services/auth.service';
+import { NavbarService } from 'src/app/services/navbar.service';
 
 @Component({
   selector: 'app-registration',
@@ -12,11 +13,12 @@ export class RegistrationComponent implements OnInit {
 
   title = 'GoT';
   userRegistration = new UserRegistration();
-  constructor(private authService: AuthService, private route:Router){
+  constructor(private authService: AuthService, private route:Router, private nav:NavbarService){
     localStorage.clear();
   }
 
   ngOnInit(): void {
+    this.nav.hide();
   }
   register(userRegistration: UserRegistration){
     this.authService.register(userRegistration).subscribe();

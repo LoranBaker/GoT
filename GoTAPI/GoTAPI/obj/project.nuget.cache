@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wtytQcUrcNKMonOLcxI2nViNG0mKb7pRDPt9QiObqabmOP55fS/iAUp2AHFR9BlnoXgMXTGfFW2Mja2oCevVeQ==",
+  "dgSpecHash": "iq13GJ7cDq01xZbDvd76u99j/AshjGNKtcVMUVnzZazZLyKvbwOcVY8a3t2uJY2UgJSbVvJr7qQOkvYfUj7WMw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\loran\\OneDrive\\Desktop\\GoTAngular\\GoTAPI\\GoTAPI\\GoTAPI.csproj",
+  "projectFilePath": "C:\\Users\\loran\\OneDrive\\Desktop\\GoT\\GoTAPI\\GoTAPI\\GoTAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\loran\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\loran\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.9\\microsoft.aspnetcore.authentication.jwtbearer.6.0.9.nupkg.sha512",

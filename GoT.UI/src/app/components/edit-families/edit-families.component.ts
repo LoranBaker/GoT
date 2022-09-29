@@ -1,6 +1,7 @@
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, Inject, ViewChild } from '@angular/core';
 import { Families } from 'src/app/models/families';
 import { FamiliesService } from 'src/app/services/families.service';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-edit-families',
@@ -12,22 +13,22 @@ export class EditFamiliesComponent implements OnInit {
   @Output() familiesUpdated = new EventEmitter<Families[]>();
 
 
-  constructor(private familyServices: FamiliesService) { }
+  constructor(public modal: NgbActiveModal,private familyServices: FamiliesService) { }
 
 
   ngOnInit(): void {
+    console.log(this.families);
   }
 
   updateFamilies(families:Families){
     this.familyServices.updateFamilies(families).subscribe((families: Families[])=> this.familiesUpdated.emit(families));
+    this.modal.close();
   }
 
   deleteFamilies(families:Families){
     this.familyServices.deleteFamilies(families).subscribe((families: Families[])=> this.familiesUpdated.emit(families));
   }
 
-  createFamilies(families:Families){
-    this.familyServices.createFamilies(families).subscribe((families: Families[])=> this.familiesUpdated.emit(families));
-  }
+
 
 }

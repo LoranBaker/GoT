@@ -1,11 +1,15 @@
+.container{
+    background-color: black;
+}
 .center{
     margin-top: 40px;
-    margin-left: 40px;
-    margin-right: 40px;
 }
-
 .center .addButton button{
     margin-bottom: 10px;
     float: right;
     
+}
+
+.center .table {
+    background-color: #dab600;
 }

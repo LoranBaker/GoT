@@ -2223,11 +2223,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\loran\\OneDrive\\Desktop\\GoTAngular\\GoTAPI\\GoTAPI\\GoTAPI.csproj",
+      "projectUniqueName": "C:\\Users\\loran\\OneDrive\\Desktop\\GoT\\GoTAPI\\GoTAPI\\GoTAPI.csproj",
       "projectName": "GoTAPI",
-      "projectPath": "C:\\Users\\loran\\OneDrive\\Desktop\\GoTAngular\\GoTAPI\\GoTAPI\\GoTAPI.csproj",
+      "projectPath": "C:\\Users\\loran\\OneDrive\\Desktop\\GoT\\GoTAPI\\GoTAPI\\GoTAPI.csproj",
       "packagesPath": "C:\\Users\\loran\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\loran\\OneDrive\\Desktop\\GoTAngular\\GoTAPI\\GoTAPI\\obj\\",
+      "outputPath": "C:\\Users\\loran\\OneDrive\\Desktop\\GoT\\GoTAPI\\GoTAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

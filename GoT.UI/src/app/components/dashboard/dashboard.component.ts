@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  } from '@angular/core';
+import { NavbarService } from 'src/app/services/navbar.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
+  imageSrc = './assets/img/game-of-thrones-logo.jpg'; 
+  imageAlt = 'GOTLogo';
+  constructor(private nav:NavbarService) { }
 
   ngOnInit(): void {
+    
+    this.nav.show();
   }
+
+
 
 }

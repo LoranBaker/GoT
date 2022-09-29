@@ -9,11 +9,14 @@ import { FamiliesDashboardComponent } from './components/families-dashboard/fami
 import { AuthInterceptor } from './services/auth.interceptor';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LogoutComponent } from './components/logout/logout.component';
+import { AuthGuard } from './shared/auth.guard';
+import { AddFamiliesComponent } from './components/add-families/add-families.component';
+import { DeleteFamiliesComponent } from './components/delete-families/delete-families.component';
+
 
 
 @NgModule({
@@ -24,8 +27,11 @@ import { LogoutComponent } from './components/logout/logout.component';
     LoginComponent,
     DashboardComponent,
     RegistrationComponent,
-    LogoutComponent,
+    AddFamiliesComponent,
+    DeleteFamiliesComponent,
+    
   ],
+  entryComponents: [EditFamiliesComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -38,8 +44,11 @@ import { LogoutComponent } from './components/logout/logout.component';
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
-    multi:true
-  }],
+    multi:true,
+  },
+  NgbActiveModal,
+  NgbModal
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
