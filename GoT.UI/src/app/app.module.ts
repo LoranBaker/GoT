@@ -16,7 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuard } from './shared/auth.guard';
 import { AddFamiliesComponent } from './components/add-families/add-families.component';
 import { DeleteFamiliesComponent } from './components/delete-families/delete-families.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -29,7 +29,7 @@ import { DeleteFamiliesComponent } from './components/delete-families/delete-fam
     RegistrationComponent,
     AddFamiliesComponent,
     DeleteFamiliesComponent,
-    
+ 
   ],
   entryComponents: [EditFamiliesComponent],
   imports: [
@@ -40,6 +40,7 @@ import { DeleteFamiliesComponent } from './components/delete-families/delete-fam
     NgbModule,
     MatDialogModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
