@@ -7,7 +7,7 @@ import { NavbarService } from 'src/app/services/navbar.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  imageSrc = './assets/img/game-of-thrones-logo.jpg'; 
+  imageSrc = './assets/img/got-log.jpg'; 
   imageAlt = 'GOTLogo';
   constructor(private nav:NavbarService) { }
 

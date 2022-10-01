@@ -10,35 +10,36 @@
                     <form [formGroup]="formRegistration">
                         <div class="form-group">
                           <label for="exampleInputEmail1">Username</label>
-                          <input type="email" class="form-control" formControlName="username" placeholder="Enter username">
-                          <span *ngIf="f['username'].getError('required')!=null" class="error-message">Enter username </span>
-                          <span *ngIf="f['username'].getError('minlength')!=null" class="error-message">Username should be at least 4 character! </span>
+                          <input type="email" class="form-control" formControlName="username">
+                          <span *ngIf="f['username'].getError('required')!=null" class="error-message" style="color: red;">Enter username </span>
+                          <span *ngIf="f['username'].getError('minlength')!=null" class="error-message" style="color: red;">Username should be at least 4 character! </span>
                         </div>
                         <br>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Name</label>
-                            <input type="email" class="form-control" formControlName="name"  placeholder="Enter name">
-                            <span class="error-message">Enter name! </span>
+                            <input type="email" class="form-control" formControlName="name" >
+                            <span class="error-message" *ngIf="f['name'].getError('required')!=null" style="color: red;">Enter name</span>
                           </div>
                           <br>
                         <div class="form-group">
                           <label for="exampleInputPassword1">Password</label>
-                          <input type="password" class="form-control" formControlName="password"  placeholder="Password">
-                          <span *ngIf="f['password'].getError('required')!=null" class="error-message">Enter password </span>
-                          <span *ngIf="f['password'].getError('minlength')!=null" class="error-message">Password should be at least 6 character! </span>
+                          <input type="password" class="form-control" formControlName="password" >
+                          <span *ngIf="f['password'].getError('required')!=null" class="error-message" style="color: red;">Enter password </span>
+                          <span *ngIf="f['password'].getError('minlength')!=null" class="error-message" style="color: red;">Password should be at least 6 character! </span>
                         </div>
                         <br>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Confirm Password</label>
-                            <input type="password" class="form-control" formControlName="confirmpassword" placeholder="Password">
-                            <span *ngIf="f['confirmpassword'].getError('required')!=null" class="error-message">Confirm password </span>
-                          <span *ngIf="f['confirmpassword'].getError('mustMatch')!=null" class="error-message">Confirm password is not same as password! </span>
+                            <input type="password" class="form-control" formControlName="confirmpassword">
+                            <span *ngIf="f['confirmpassword'].getError('required')!=null" class="error-message" style="color: red;">Confirm password </span>
+                          <span *ngIf="f['confirmpassword'].getError('mustMatch')!=null" class="error-message" style="color: red;">Confirm password is not same as password! </span>
                           </div>
                           <br>
-                        <button [disabled]="formRegistration.invalid" type="submit"class="btn btn-primary" (click)="register()">Sign Up</button>
+                        <button [disabled]="formRegistration.invalid" type="submit"class="btn btn-primary" (click)="register()" style="background-color:#0F3141;
+                        border:solid 1px #1F1F1E;">Sign Up</button>
                       </form>
           
-                <a style="color: #fff; margin-top: 10px;"  routerLink="/login">Already logged in? Click to Login!</a>
+                <a style="color: black; margin-top: 10px;"  routerLink="/login">Already logged in? Click to Login!</a>
             </div>
             
         </div>

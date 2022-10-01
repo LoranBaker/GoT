@@ -1,8 +1,9 @@
 <div class="container">
 <div class="center" style="overflow-x:auto;">
   <div class="addButton">
-    <h1 style="color:black;">Game of thrones families</h1>
-    <button class="btn btn-primary btn-lg active" role="button" aria-pressed="true" (click)="createNewFamily()">Create new family</button>
+    <h1 style="color:#ECE5D3;">Game of thrones families</h1>
+    <hr style="border: solid 1px #ECE5D3;">
+    <button class="btn btn-primary btn-lg active" role="button" aria-pressed="true" (click)="createNewFamily()" >Create new family</button>
   </div>
   <table class="table table" >
       <thead>
@@ -20,7 +21,7 @@
               <td>{{family.naziv}}</td>
               <td>{{family.predstavnik}}</td>
               <td>{{family.grb}}</td>
-              <td><button (click)="editFamily(family)" type="button" class="btn btn-primary me-1">Edit</button>
+              <td><button (click)="editFamily(family)" type="button" id="editButton" class="btn btn-primary me-1">Edit</button>
               <button (click)="deleteFamily(family)" type="button" class="btn btn-danger">Delete</button></td>
           </tr>
       </tbody>

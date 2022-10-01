@@ -6,7 +6,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgb(36, 31, 31);
+    background: #ECE5D3;
+    
 }
 
 .card h1 
@@ -14,15 +15,18 @@
     color: #ffffff;
     font-style: normal;
     font-size: 40px;
+    color: black;
 }
 .card h6{
     color: #ffffff;
     font-style: normal;
     font-size: 15px;
+    color: black;
 }
 
 label{
     color: #fff;
     font-style: normal;
     font-size: 15px;
+    color: black;
 }

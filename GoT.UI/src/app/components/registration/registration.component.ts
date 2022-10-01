@@ -16,21 +16,6 @@ export class RegistrationComponent implements OnInit {
   formRegistration: FormGroup;
   newRegistration:UserRegistration = new UserRegistration();
 
-  error_messages = {
-    'confirm_password': [
-      { type: 'required', message: 'Confirm password is required' },
-      { type: 'areEqual', message: 'Password mismatch' }
-    ],
-    'password': [
-      { type: 'required', message: 'Password is required' },
-      { type: 'minlength', message: 'Password must be at least 5 characters long' },
-      { type: 'pattern', message: 'Your password must contain at least one uppercase, one lowercase, and one number' }
-    ],
-  }
-
-
-
-
   constructor(private authService: AuthService, private route:Router, private nav:NavbarService, private fb:FormBuilder){
     this.formRegistration = this.fb.group({
       username: new FormControl('', Validators.compose([

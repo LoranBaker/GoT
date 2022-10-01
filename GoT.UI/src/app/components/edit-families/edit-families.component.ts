@@ -2,6 +2,7 @@ import { Component, ElementRef, EventEmitter, Input, OnInit, Output, Inject, Vie
 import { Families } from 'src/app/models/families';
 import { FamiliesService } from 'src/app/services/families.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-edit-families',
@@ -13,7 +14,7 @@ export class EditFamiliesComponent implements OnInit {
   @Output() familiesUpdated = new EventEmitter<Families[]>();
 
 
-  constructor(public modal: NgbActiveModal,private familyServices: FamiliesService) { }
+  constructor(public modal: NgbActiveModal,private familyServices: FamiliesService, private toastr:ToastrService) { }
 
 
   ngOnInit(): void {
@@ -22,13 +23,9 @@ export class EditFamiliesComponent implements OnInit {
 
   updateFamilies(families:Families){
     this.familyServices.updateFamilies(families).subscribe((families: Families[])=> this.familiesUpdated.emit(families));
+    this.toastr.success("You have successfully edited family!");
     this.modal.close();
   }
-
-  deleteFamilies(families:Families){
-    this.familyServices.deleteFamilies(families).subscribe((families: Families[])=> this.familiesUpdated.emit(families));
-  }
-
 
 
 }

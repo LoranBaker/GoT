@@ -3,23 +3,30 @@
     <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
   </div>
   <div class="modal-body">
-    <form>
-        <div *ngIf="families">
+    <form [formGroup]="addFamilies">
+        <div>
             <div class="form-group">
                 Naziv:
-                <input class="form-control" [(ngModel)]="families.naziv" [ngModelOptions]="{standalone: true}" placeholder="Naziv"/>
+                <input class="form-control" formControlName="naziv"/>
+                <span *ngIf="f['naziv'].getError('required')!=null" class="error-message" style="color: red;">Unesite naziv </span>
+                <span *ngIf="f['naziv'].getError('minlength')!=null" class="error-message" style="color: red;">Naziv should be at least 3 character! </span>
             </div>
             <div class="form-group">
                 Predstavnik:
-                <input class="form-control" [(ngModel)]="families.predstavnik" [ngModelOptions]="{standalone: true}" placeholder="Predstavnik"/>
+                <input class="form-control" formControlName="predstavnik"/>
+                <span *ngIf="f['predstavnik'].getError('required')!=null" class="error-message" style="color: red;">Unesite predstavnika </span>
+                <span *ngIf="f['predstavnik'].getError('minlength')!=null" class="error-message" style="color: red;">Predstavnik should be at least 3 character! </span>
             </div>
             <div class="form-group">
                 Grb:
-                <input class="form-control" [(ngModel)]="families.grb" [ngModelOptions]="{standalone: true}" placeholder="Grb"/>
+                <input class="form-control" formControlName="grb"/>
+                <span *ngIf="f['grb'].getError('required')!=null" class="error-message" style="color: red;">Unesite grb </span>
+                <span *ngIf="f['grb'].getError('minlength')!=null" class="error-message" style="color: red;">Grb should be at least 3 character! </span>
             </div>
             <br/>
             <div class="modal-footer">
-                <button class="btn btn-primary" (click)="createFamilies(families)" *ngIf="!families.id">Create</button>
+                <button class="btn btn-primary" [disabled]="addFamilies.invalid" (click)="createFamilies()" style="background-color:#0F3141;
+                border:solid 1px #1F1F1E;" type="submit">Create</button>
                 <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>
               </div>
 

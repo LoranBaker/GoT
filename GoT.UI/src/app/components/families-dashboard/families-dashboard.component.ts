@@ -6,6 +6,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AddFamiliesComponent } from '../add-families/add-families.component';
 import { DeleteFamiliesComponent } from '../delete-families/delete-families.component';
 import { NavbarService } from 'src/app/services/navbar.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-families-dashboard',
@@ -18,7 +19,7 @@ export class FamiliesDashboardComponent implements OnInit {
   families: Families[] = [];
   familiesToEdit?: Families; 
 
-  constructor(private familiesService: FamiliesService, private modalService: NgbModal,private nav:NavbarService){}
+  constructor(private familiesService: FamiliesService, private modalService: NgbModal,private nav:NavbarService, private toastr:ToastrService){}
     
     ngOnInit() : void {
       this.nav.show();
@@ -36,9 +37,8 @@ export class FamiliesDashboardComponent implements OnInit {
     const ref = this.modalService.open(AddFamiliesComponent);
     ref.componentInstance.families = new Families();
     ref.result.then((ok)=>{
-      this.familiesService
-      .getFamilies()
-      .subscribe((result: Families[]) => (this.families = result));
+      console.log("ok");
+      
     },
     (cancel)=>{
       console.log("cancel");
@@ -52,9 +52,7 @@ export class FamiliesDashboardComponent implements OnInit {
     ref.componentInstance.families = families;
 
     ref.result.then((ok)=>{
-      this.familiesService
-      .getFamilies()
-      .subscribe((result: Families[]) => (this.families = result));
+      console.log("ok");
     },
     (cancel)=>{
       console.log("cancel");
@@ -67,9 +65,7 @@ export class FamiliesDashboardComponent implements OnInit {
     ref.componentInstance.families = families;
 
     ref.result.then((ok)=>{
-      this.familiesService
-      .getFamilies()
-      .subscribe((result: Families[]) => (this.families = result));
+      console.log("ok");
     },
     (cancel)=>{
       console.log("cancel");

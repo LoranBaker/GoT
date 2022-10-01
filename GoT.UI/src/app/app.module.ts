@@ -17,6 +17,8 @@ import { AuthGuard } from './shared/auth.guard';
 import { AddFamiliesComponent } from './components/add-families/add-families.component';
 import { DeleteFamiliesComponent } from './components/delete-families/delete-families.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+
 
 
 @NgModule({
@@ -41,6 +43,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatDialogModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      progressBar:true,
+      progressAnimation:'increasing',
+      preventDuplicates:true,
+    }),
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
